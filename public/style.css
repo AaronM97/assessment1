@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+/* deleted unnecessary duplicate of font-family and h1 for something we didnt want to show*/
 section {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px;
@@ -33,18 +33,18 @@ footer {
   width: 100%;
   text-align: right;
 }
-
+/* had to width 100% this to make it fit the whole width of screen then slapped a text aligm right to put it on the right */
 p {
   padding-right: 20px;
 }
 
-form > input {
+form > input { 
   font-size: 18px;
   padding: 5px 20px;
   border: none;
   border-radius: 5px;
   background-color: #696660;
   color: white;
-}
-
+} 
+/* This was the one to change the button. Border radius to round button edges, and changed backgorund & text colour. */
 
