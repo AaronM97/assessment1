@@ -20,47 +20,38 @@ let quotes = [
   '"Live as if you were to die tomorrow. Learn as if you were to live forever." <br> ―Mahatma Gandhi',
   '"A learning curve is essential to growth." <br> –Tammy Bjelland'
 ];
-// module.exports = quotes; *see script.js*
 
 app.use(cors());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => res.send("index"));
 
-// write route to get all quotes below this line
-
-// (insert your code here)
-app.get('/quotes/', (req, res) => {
-  let allQuotes = '';
-  for (i = 0; i < quotes.length; i++) {
-    allQuotes += `${quotes[i]} <br>`;
-  }
-  res.send(allQuotes)
+app.get('/quotes', (req, res) => {
+  // shouldn't include trailing slashes on routes
+  // This doesn't really add anything as quotes is an array - seems like an expensive process to be iterating over an array to produce a string with breaks?
+  res.send(quotes)
 })
-//---------------------------
 
-// write route to get a random quote below this line
-
-// (insert your code here)
 app.get('/quotes/random', (req, res) => {
   let rnd = Math.floor(Math.random() * quotes.length);
   res.send(quotes[rnd]);
 })
-//---------------------------
-
-// make sure route can handle errors if index is out of range
 
 app.get("/quotes/:index", (req, res) => {
-  // res.send(quotes[req.params.index])
   let index = req.params.index;
+  console.log(typeof(index));
+  // index will be a string
+  // this works - however due to hidden conversion by JS - ideally should have explicit conversion from string to number type 
+  // What if the array was extended? would the following code still be correct?
   const indexChecker = index <= 15 && index > 0 ? true : false;
   if (indexChecker) {
     res.status(200).send(quotes[req.params.index - 1])
   } else {
+    // good use of status codes - but a little excessive for the purposes of this exercise. 
+    // what if the array was extended? Would the following message still be valid?
     res.status(404).send(`There are only 15 quotes. Please pick a quote between 1 & 15.`);
   }
 });
 
-//---------------------------
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Quote App listening on port ${port}!`));
+// Would have been good to change this from the stock response.
