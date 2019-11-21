@@ -15,3 +15,17 @@ I have some quotes in the actual js files and html and css that explain what I'v
 I realise I havent finished typing this and its past 1 so i'll stop here. I haven't chnaged/committed any of the files after 1pm, just this read.me
 
 This is also probably not the best readme as I am so incredibly ill but thank God i managed to get the actual code working.
+
+### post assessment review
+
+As I mentioned I had an absolute shambles start to that Monday morning - I walked into that day prepared to not pass. 
+After reviewing what I had done on the day and doing it again (and seeing how it was intended to be done) I see two things: 
+1) I'm impressed I managed to make everything work the bootleg way
+2) When you said it not that bad I now see why 
+I did some revision on the weekend which helped me bootleg it, but I've seen where my weakspots are, and also how I might go about revising for this course.
+There are some topics like axios and APIs I just didn't fully grasp. I spent a lot of time understanding jquery and promises, but didn't know how much progress I was making.
+I know now to have some objective to complete like a task to let me know I know something - so I am not wasting time.
+When looking at how to actually do it properly I see how easy it actually was, it was me not taking the time to understand what is going on and being so hellbent on completing the tasks.
+I have made the changes and added my comments on top of the js files. Could you please review them for me. 
+
+p.s only compile using nodemon 
